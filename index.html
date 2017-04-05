@@ -314,13 +314,11 @@
                 <div class="col-sm-12 scrollpoint sp-effect3">
 
                			<ul class="brands brands-inline">
-                            <li><a href="index.html#"><i class="fa fa-facebook  hi-icon-effect-8"></i></a></li>
-                            <li><a href="index.html#"><i class="fa fa-twitter"></i></a></li>
-                            <li><a href="index.html#"><i class="fa fa-google-plus"></i></a></li>
-                            <li><a href="index.html#"><i class="fa fa-linkedin"></i></a></li>
+                            <li><a href="https://twitter.com/jfajardo89" target="_blank"><i class="fa fa-twitter"></i></a></li>
+                            <li><a href="https://www.linkedin.com/in/jfajardo89" target="_blank"><i class="fa fa-linkedin"></i></a></li>
                         </ul>
 
-                    <p>© Jonhatan Fajardo The Freelancer 2014 All right reserved. Designed by <a href="http:https://pixelized.cz" target="_blank" class="btn btn-footer">Pixelized Studio</a></p>
+                    <p>© Jonhatan Fajardo</p>
                 </div>
             </div>
         </div>
@@ -358,13 +356,13 @@
           dataType: "json",
 					success: function() {
 						$('.contact-alert').html("<div class='alert alert-success'>");
-						$('.contact-alert > .alert-success').html("<button type='button' class='close' data-dismiss='alert' aria-hidden='true'><i class='fa fa-times'></i></button><strong>Your message has been sent.</strong></div>");
+						$('.contact-alert > .alert-success').html("<button type='button' class='close' data-dismiss='alert' aria-hidden='true'><i class='fa fa-times'></i></button><strong>Mesnaje enviado.</strong></div>");
 						https://clear all fields
 						$('#contactForm').trigger("reset");
 					},
 					error: function() {
 						$('.contact-alert').html("<div class='alert alert-danger'>");
-						$('.contact-alert > .alert-danger').html("<button type='button' class='close' data-dismiss='alert' aria-hidden='true'><i class='fa fa-times'></i></button><strong>Sorry, it seems that my mail server is not responding. Please try again later!</strong></div>");
+						$('.contact-alert > .alert-danger').html("<button type='button' class='close' data-dismiss='alert' aria-hidden='true'><i class='fa fa-times'></i></button><strong>Lo sentimos, tenemos un problema con nuestro servidor!</strong></div>");
 						$('#contactForm').trigger("reset");
 					},
 				})
