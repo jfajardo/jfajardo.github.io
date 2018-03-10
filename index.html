@@ -250,33 +250,34 @@
                         	<div class="col-sm-8">
                             	<h3 class="hidden-xs">Déjame un mensaje</h3>
 
-                                <form role="form" id="contactForm">
+                                <form role="form" method="POST" id="contactForm" action="https://formspree.io/jfajardo89@gmail.com">
                                     <div class="form-group control-group">
                                         <div class="controls">
                                             <p class="help-block"></p>
-                                            <input type="text" class="form-control" placeholder="Nombre" id="firstname" data-validation-required-message="Por favor ingresa tu nombre." aria-invalid="false">
+                                            <input type="text" class="form-control" placeholder="Nombre" id="firstname" required data-validation-required-message="Por favor ingresa tu nombre." aria-invalid="false">
                                         </div>
                                     </div>
                                     <div class="form-group control-group">
                                         <div class="controls">
                                             <p class="help-block"></p>
-                                            <input type="text" class="form-control" placeholder="Apellido" id="lastname" data-validation-required-message="Por favor ingresa tu apellido." aria-invalid="false">
+                                            <input type="text" class="form-control" placeholder="Apellido" id="lastname" required data-validation-required-message="Por favor ingresa tu apellido." aria-invalid="false">
                                         </div>
                                     </div>
                                     <div class="form-group control-group">
                                         <div class="controls">
                                             <p class="help-block"></p>
-                                            <input type="email" class="form-control" placeholder="Email" id="_replyto" data-validation-required-message="Por favor ingresa tu correo electrónico." aria-invalid="false">
-                                        </div>
-                                    </div>
-
-                                    <div class="form-group control-group">
-                                        <div class="controls">
-                                            <p class="help-block"></p>
-                                            <textarea class="form-control" placeholder="Mensaje" id="message" data-validation-required-message="Por favor escribe tu mensaje." aria-invalid="false"></textarea>
+                                            <input type="email" class="form-control" placeholder="Email" id="_replyto" required data-validation-required-message="Por favor ingresa tu correo electrónico." aria-invalid="false">
                                         </div>
                                     </div>
 
+                                    <div class="form-group control-group">
+                                        <div class="controls">
+                                            <p class="help-block"></p>
+                                            <textarea class="form-control" placeholder="Mensaje" id="message" required data-validation-required-message="Por favor escribe tu mensaje." aria-invalid="false"></textarea>
+                                        </div>
+                                    </div>
+                                    <input type="hidden" name="_next" value="jfajardo.github.io" />
+                                    <input type="text" name="_gotcha" style="display:none" />
                                     <div class="form-group">
                                         <button type="submit" class="btn btn-primary">Enviar mensaje</button>
                                     </div>
@@ -339,42 +340,6 @@
     <script src="js/jquery.countTo.js"></script>
     <script src="js/jqBootstrapValidation.js"></script>
     <script src="js/custom.js"></script>
-    <script>
-    $(function () {
-		$("input,textarea").jqBootstrapValidation({
-        	preventSubmit: true,
 
-			submitSuccess: function($form, event) {
-				event.preventDefault(); // prevent default submit behaviour
-				// get values from FORM
-
-        var data = {
-          firstname: $('#firstname').val(),
-          lastname: $('#lastname').val(),
-          _replyto: $('#_replyto').val(),
-          message: $('#message').val(),
-        };
-        console.log(JSON.stringify(data));
-				$.ajax({
-					url: "//formspree.io/jfajardo89@gmail.com",
-					method: "POST",
-					data: data,
-          dataType: "json",
-					success: function() {
-						$('.contact-alert').html("<div class='alert alert-success'>");
-						$('.contact-alert > .alert-success').html("<button type='button' class='close' data-dismiss='alert' aria-hidden='true'><i class='fa fa-times'></i></button><strong>Mesnaje enviado.</strong></div>");
-						$('#contactForm').trigger("reset");
-					},
-					error: function(e) {
-						$('.contact-alert').html("<div class='alert alert-danger'>");
-						$('.contact-alert > .alert-danger').html("<button type='button' class='close' data-dismiss='alert' aria-hidden='true'><i class='fa fa-times'></i></button><strong>Lo sentimos, tenemos un problema con nuestro servidor!</strong></div>");
-						$('#contactForm').trigger("reset");
-             console.log(e);
-					},
-				})
-			}
-		});
-	});
-    </script>
 </body>
 </html>
